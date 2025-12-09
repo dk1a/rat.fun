@@ -101,10 +101,6 @@
       // Send to Sentry and show user-friendly toast
       errorHandler(err, "Setup failed")
 
-      // Wait a moment to show error, then go back to form
-      setTimeout(() => {
-        spawnState.state.transitionTo(SPAWN_STATE.SESSION_AND_SPAWN)
-      }, 2000)
     }
   }
 
@@ -116,6 +112,7 @@
 
 <div class="outer-container">
   <div class="inner-container">
+    sessionandspawn loading
     {#if error}
       <div class="message error" in:fade={{ duration: 200 }}>
         {error}

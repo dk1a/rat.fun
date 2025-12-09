@@ -40,10 +40,6 @@
       error = err instanceof Error ? err.message : "Spawn failed"
       spawning = false
 
-      // Wait a moment to show error, then go back to form
-      setTimeout(() => {
-        spawnState.state.transitionTo(SPAWN_STATE.SPAWN)
-      }, 2000)
     }
   }
 

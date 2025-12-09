@@ -31,6 +31,7 @@ export const getEnvironmentFromUrl = (url: URL) => {
   const networkParam = url.searchParams.get("network")
 
   if (
+    true ||
     hostname === "rat.fun" ||
     hostname === "rat-fun-drawbridge.netlify.app" ||
     networkParam === "base"

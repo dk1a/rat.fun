@@ -13,6 +13,7 @@
   import { initEntities, isEntitiesInitialized } from "$lib/modules/chain-sync"
   import { addressToId } from "$lib/modules/utils"
 
+  let testStuff = $state<string | null>(null)
   let error = $state<string | null>(null)
   let loadingText = $state<string>("Setting up session")
 
@@ -79,10 +80,6 @@
       // Send to Sentry and show user-friendly toast
       errorHandler(err, "Session setup failed")
 
-      // Wait a moment to show error, then go back to setup screen
-      setTimeout(() => {
-        spawnState.state.transitionTo(SPAWN_STATE.SESSION)
-      }, 2000)
     }
   }
 
@@ -94,6 +91,7 @@
 
 <div class="outer-container">
   <div class="inner-container">
+    session loading
     {#if error}
       <div class="message error" in:fade={{ duration: 200 }}>
         {error}
