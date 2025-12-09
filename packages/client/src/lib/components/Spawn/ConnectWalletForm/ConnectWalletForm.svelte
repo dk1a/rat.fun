@@ -24,7 +24,7 @@
 
   let connecting = $state(false)
 
-  let showDebugPanel = $state(false)
+  let showDebugPanel = $state(true)
   let showWalletSelect = $state(false)
   let showNoWalletsModal = $state(false)
   let showDeepLinkSelect = $state(false)
