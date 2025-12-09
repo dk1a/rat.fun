@@ -21,12 +21,12 @@ export function getClients(
   // Set up viem clients
   const publicClient = createPublicClient({
     chain,
-    transport: http()
+    transport: http("https://base-mainnet.g.alchemy.com/v2/-hnbjcqjwXmO7ip5cyHBh")
   })
 
   const walletClient = createWalletClient({
     chain,
-    transport: http(),
+    transport: http("https://base-mainnet.g.alchemy.com/v2/-hnbjcqjwXmO7ip5cyHBh"),
     account
   })
 

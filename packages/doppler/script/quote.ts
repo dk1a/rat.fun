@@ -7,7 +7,7 @@ import { validateChain } from "./utils/validateChain"
 // Set up command line options
 const program = new Command()
 program
-  .requiredOption("-c, --chain-id <CHAINID>", "Chain id", parseInt, 84532)
+  .requiredOption("-c, --chain-id <CHAINID>", "Chain id", (val: string) => parseInt(val), 84532)
   .requiredOption("-n, --amount <AMOUNT>", "Token amount, not multiplied by decimals")
   .option("-o, --out", "Specify exact out amount, instead of exact in")
   .parse(process.argv)
