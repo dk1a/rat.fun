@@ -97,6 +97,7 @@
     } catch (error) {
       console.error("[ConnectWalletForm] Connection failed:", error)
       errorHandler(error, "Failed to connect wallet")
+      showDebugPanel = true
     } finally {
       connecting = false
     }
@@ -107,6 +108,7 @@
     if ($drawbridgeError) {
       console.error("[ConnectWalletForm] Drawbridge error:", $drawbridgeError)
       errorHandler($drawbridgeError, "Wallet connection error")
+      showDebugPanel = true
     }
   })
 

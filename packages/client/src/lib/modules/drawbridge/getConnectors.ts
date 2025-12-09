@@ -1,5 +1,5 @@
 import { CreateConnectorFn } from "@wagmi/core"
-import { injected, safe } from "wagmi/connectors"
+import { baseAccount, injected, safe } from "wagmi/connectors"
 
 // Debug state for visible debugging (no console in mobile browsers)
 export const debugInfo = {
@@ -117,6 +117,8 @@ export function getConnectors(): CreateConnectorFn[] {
       })
     )
   }
+
+  connectors.push(baseAccount())
 
   debugInfo.connectorsCount = connectors.length
 
